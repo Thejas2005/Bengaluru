@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tourist Location</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: rgb(48, 48, 48); 
+            color: white;
+            transition: background-color 0.5s, color 0.5s;
+        }
+        img{
+            width: 500px;
+        }
+        header {
+            background-color: rgb(32, 32, 39);
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        header a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2em;
+        }
+        nav {
+            background-color: rgb(32, 32, 39);
+            overflow: hidden;
+        }
+        nav a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        .container {
+            padding: 20px;
+        }
+        .image-space {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .info-box {
+            background-color: rgb(64, 64, 64); 
+            width: 100%;
+            padding: 20px;
+            margin-bottom: 20px;
+            color: white;
+            box-sizing: border-box;
+            transition: background-color 0.5s;
+        }
+        .eateries {
+            background-color: rgb(64, 64, 64); 
+            width: 100%;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+            transition: background-color 0.5s;
+        }
+        .map-button {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        .map-button a {
+            background-color: rgb(32, 32, 39);
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: 1.2em;
+            border-radius: 5px;
+            transition: background-color 0.5s, color 0.5s;
+        }
+        .map-button a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        .mode-toggle {
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 1.2em;
+        }
+        #logo{
+            font-weight: bolder;
+            font-size: 25px;
+        }
+        #abt{
+            font-size: 18px;
+            font-weight:lighter;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <a href="mainpage.html.html" target="_blank" id="logo">Bengaluru</a>
+    <nav>
+        <a href="#info">Info</a>
+        <a href="#eateries">Nearby Eateries</a>
+        <a href="#map">Map</a>
+    </nav>
+    <div class="mode-toggle" id="modeToggle">🌙</div>
+</header>
+
+
+
+
+
+        <div class="container">
+            <div class="image-space" id="image">
+                <img src="loc4.jpg" alt="Tourist Location" style="max-width: 100%; height: auto;">
+            </div>
+        <div class="info-box" id="info">
+            <h2>About This Location</h2>
+            <p id="abt">Jakkur Aerodrome: Jakkur Aerodrome, an airstrip located in the northern part of Bangalore, was developed in the 1990s for small aircraft and microlight flying. It also serves as a hub for flight training and aviation events. The aerodrome has become an attractive spot for aviation enthusiasts and offers microlight flights to the public, providing an exciting view of the city. It is one of the few active aerodromes in Bangalore.</p>
+        </div>
+    
+        
+    
+        <div class="eateries" id="eateries">
+            <h2>Nearby Eateries</h2>
+            <ul>
+                <li>Café Nosh: 1 km, quick bites and coffee.</li>
+<li>House of Commons: 2 km, pub-style dining.</li>
+<li>Chulha Chauki Da Dhaba: 3 km, Punjabi-style dhaba.</li>
+            </ul>
+        </div>
+    </div>
+ 
+   
+   
+    <div class="map-button" id="map">
+            <a href="https://www.google.com/maps/place/Art+of+Living+International+Center/@12.8291286,77.5115386,17z/data=!3m1!4b1!4m6!3m5!1s0x3bae41aa962bb809:0x57dc6ecf37574f2b!8m2!3d12.8291286!4d77.5115386!16s%2Fg%2F11g6nvzp2f?entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D" target="_blank">View Map on Google Maps</a>
+        </div>
+
+        <div class="container">
+            <div class="image-space" id="image">
+                <img src="loc.jpeg" alt="Tourist Location" style="max-width: 100%; height: auto;">
+            </div>
+        <div class="info-box" id="info">
+            <h2>About This Location</h2>
+            <p id="abt">Art of Living International Center: Founded by Sri Sri Ravi Shankar, this center offers spiritual teachings and meditation programs. Situated in the peaceful surroundings of the Panchagiri Hills, the center is known for its beautiful architecture and vast grounds. With a focus on holistic well-being, it also hosts yoga, breathing exercises, and various cultural activities. The center attracts visitors seeking peace and mindfulness, making it a spiritual retreat in Bangalore.</p>
+        </div>
+    
+        
+    
+        <div class="eateries" id="eateries">
+            <h2>Nearby Eateries</h2>
+            <ul>
+                <li>The Village: 1 km, rustic dining experience.</li>
+                <li>NH7 Refuel Café: 2 km, casual roadside eatery.</li>
+                <li>Rang De Basanti Dhaba: 3 km, North Indian flavors.</li>
+            </ul>
+        </div>
+    </div>
+    <div class="map-button" id="map">
+            <a href="https://www.google.com/maps/place/Turahalli+Forest/@12.9807285,77.4876443,11z/data=!4m10!1m2!2m1!1sTurahalli+Forest!3m6!1s0x3bae3f850f65098b:0x33046c0b4efebb76!8m2!3d12.8831706!4d77.5250297!15sChBUdXJhaGFsbGkgRm9yZXN0WhIiEHR1cmFoYWxsaSBmb3Jlc3SSAQ9uYXRpb25hbF9mb3Jlc3TgAQA!16s%2Fm%2F012sn25w?entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D" target="_blank">View Map on Google Maps</a>
+        </div>
+        <div class="info-box" id="info">
+            <h2>About This Location</h2>
+
+            <div class="container">
+                <div class="image-space" id="image">
+                    <img src="loc.jpeg" alt="Tourist Location" style="max-width: 100%; height: auto;">
+                </div>
+
+            <p id="abt">Turahalli Forest: A rare patch of forest within Bangalore, Turahalli Forest is a favorite for nature enthusiasts, joggers, and trekkers. It is home to diverse flora and fauna, providing a much-needed escape from the urban sprawl. The forest offers trails that wind through the trees, making it ideal for outdoor activities like cycling and birdwatching. It is also one of the last surviving natural forests in the city, adding to its ecological importance. </p>
+        </div>
+    
+        
+    
+        <div class="eateries" id="eateries">
+            <h2>Nearby Eateries</h2>
+            <ul>
+                <li>947 Restaurant: 2 km, Indian vegetarian cuisine.</li>
+                <li>Corner House: 1.5 km, famous for desserts.</li>
+                <li>Kava Restaurant: 3 km, upscale global menu.</li>
+            </ul>
+        </div>
+    </div>
+    <div class="map-button" id="map">
+            <a href="https://www.google.com/maps/place/Ulsoor+Lake/@12.9824633,77.6193204,16z/data=!3m1!4b1!4m6!3m5!1s0x3bae16902ac7025b:0x5cda8d215b70772c!8m2!3d12.9832468!4d77.6199608!16s%2Fg%2F11dxb363mv?entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D" target="_blank">View Map on Google Maps</a>
+        </div>
+
+        <div class="container">
+            <div class="image-space" id="image">
+                <img src="loc.jpeg" alt="Tourist Location" style="max-width: 100%; height: auto;">
+            </div>
+
+        <div class="info-box" id="info">
+            <h2>About This Location</h2>
+            <p id="abt">Ulsoor Lake: Ulsoor Lake, located in the heart of Bangalore, is one of the city's oldest lakes. Spread over 50 acres, it features several islands and scenic spots perfect for relaxation. The lake is a popular destination for boating, with its clean surroundings making it ideal for evening walks. Historically, the lake was developed by the British to meet the city’s water needs, and it now stands as an urban oasis.</p>
+        </div>
+    
+        
+    
+        <div class="eateries" id="eateries">
+            <h2>Nearby Eateries</h2>
+            <ul>
+                <li>Lazy Suzy: 1 km, cozy cafe with continental fare.</li>
+<li>Smoke House Deli: 2 km, European-inspired cuisine.</li>
+<li>Imperial Restaurant: 2.5 km, local biryani and kebabs.</li>
+            </ul>
+        </div>
+    </div>
+    <div class="map-button" id="map">
+            <a href="https://www.google.com/maps/place/HAL+Heritage+Centre+and+Aerospace+Museum/@12.954655,77.6783309,17z/data=!3m1!4b1!4m6!3m5!1s0x3bae13c3ec2b6283:0xec15acb572804af6!8m2!3d12.954655!4d77.6809058!16s%2Fm%2F09v3j9y?entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D" target="_blank">View Map on Google Maps</a>
+        </div>
+
+        <div class="container">
+            <div class="image-space" id="image">
+                <img src="loc.jpeg" alt="Tourist Location" style="max-width: 100%; height: auto;">
+            </div>
+
+        <div class="info-box" id="info">
+            <h2>About This Location</h2>
+            <p id="abt">HAL Aerospace Museum: The HAL Aerospace Museum showcases India's aviation history, with displays of aircraft, engines, and aircraft models from the Indian Air Force. Located near the HAL airport, it was inaugurated in 2001 and serves as a tribute to the achievements of Hindustan Aeronautics Limited (HAL) in the aerospace industry. Visitors can explore rare aviation artifacts, learn about aerospace technology, and even see some vintage aircraft up close, making it a great educational stop.</p>
+        </div>
+    
+        
+    
+        <div class="eateries" id="eateries">
+            <h2>Nearby Eateries</h2>
+            <ul>
+                <li>Windmills Craftworks: 1 km, brewery with a library ambiance.</li>
+<li>The Pallet Brewhouse: 2 km, casual dining.</li>
+<li>The Fat Chef: 3 km, continental dishes.</li>
+            </ul>
+        </div>
+    </div>
+
+        <div class="map-button" id="map">
+            <a href="https://www.google.com/maps/place/Phoenix+Marketcity/@12.9958082,77.6946867,18z/data=!3m1!5s0x3bae115dabb584c7:0x7f8d0025f4fe5253!4m10!1m2!2m1!1s13.+Phoenix+Marketcity!3m6!1s0x3bae110b04a3be4b:0xcffb252dab2e9643!8m2!3d12.9957867!4d77.6964011!15sChYxMy4gUGhvZW5peCBNYXJrZXRjaXR5WhciFTEzIHBob2VuaXggbWFya2V0Y2l0eZIBD3Nob3BwaW5nX2NlbnRlcuABAA!16s%2Fm%2F0_vbklf?entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D" target="_blank">View Map on Google Maps</a>
+        </div>
+
+        <div class="container">
+            <div class="image-space" id="image">
+                <img src="loc.jpeg" alt="Tourist Location" style="max-width: 100%; height: auto;">
+            </div>
+
+        <div class="info-box" id="info">
+            <h2>About This Location</h2>
+            <p id="abt">Phoenix Marketcity: Phoenix Marketcity is one of Bangalore’s largest shopping and entertainment centres, offering a mix of luxury stores, eateries, and entertainment options. Opened in 2011, the mall has become a popular destination for shopping, dining, and entertainment, with theatres, an ice skating rink, and live performances. Its modern architecture and vast space make it a vibrant hub for families, shoppers, and entertainment seekers alike.</p>
+        </div>
+    
+        
+    
+        <div class="eateries" id="eateries">
+            <h2>Nearby Eateries</h2>
+            <ul>
+                <li>Punjab Grill: 500 m, upscale North Indian cuisine.</li>
+<li>Chianti: 1 km, authentic Italian dishes.</li>
+<li>Nandos: 1.5 km, famous for its peri-peri chicken.</li>
+            </ul>
+        </div>
+    </div>
+
+
+        <div class="map-button" id="map">
+            <a href="https://www.google.com/maps/search/14.+Whitefield+Art+Collective/@12.975046,77.7502181,17z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D" target="_blank">View Map on Google Maps</a>
+        </div>
+
+        <div class="container">
+            <div class="image-space" id="image">
+                <img src="loc.jpeg" alt="Tourist Location" style="max-width: 100%; height: auto;">
+            </div>
+
+        <div class="info-box" id="info">
+            <h2>About This Location</h2>
+            <p id="abt">Whitefield Art Collective: Whitefield Art Collective is a unique cultural initiative in the Whitefield neighborhood aimed at promoting contemporary art and performances. Held annually at VR Bengaluru, the event features installations, theater performances, and music concerts. The collective brings together local and international artists to celebrate creativity in all its forms. It’s an important event for art lovers, offering a platform for artistic expression in one of Bangalore's tech hubs</p>
+        </div>
+    
+        
+    
+        <div class="eateries" id="eateries">
+            <h2>Nearby Eateries</h2>
+            <ul>
+                <li>Toscano: 500 m, Italian fine dining.</li>
+<li>The Bier Library: 1.5 km, microbrewery with a vibrant vibe.</li>
+<li>Mainland China: 2 km, authentic Chinese cuisine.</li>
+            </ul>
+        </div>
+    </div>
+    <div class="map-button" id="map">
+            <a href="https://www.google.com/maps/place/KR+Market,+Huriopet,+Chickpet,+Bengaluru,+Karnataka/@12.9651157,77.5723901,16z/data=!4m6!3m5!1s0x3bae160987431df5:0x45f318bfb67f33e1!8m2!3d12.9656389!4d77.5769867!16s%2Fg%2F11by_q15l1?entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D" target="_blank">View Map on Google Maps</a>
+        </div>
+
+        <div class="container">
+            <div class="image-space" id="image">
+                <img src="loc.jpeg" alt="Tourist Location" style="max-width: 100%; height: auto;">
+            </div>
+
+        <div class="info-box" id="info">
+            <h2>About This Location</h2>
+            <p id="abt">KR Market: KR Market, or Krishnarajendra Market, is one of the oldest and busiest markets in Bangalore. Known for its vibrant and bustling atmosphere, the market is famous for fresh produce, flowers, spices, and a wide variety of goods. The flower market is particularly popular, with its colorful stalls offering flowers for all occasions. This historical market is a cultural hotspot, providing visitors with a glimpse into Bangalore's daily life and local commerce.</p>
+        </div>
+    
+        
+    
+        <div class="eateries" id="eateries">
+            <h2>Nearby Eateries</h2>
+            <ul>
+                <li>MTR (Mavalli Tiffin Room): 2 km, iconic for traditional South Indian meals.</li>
+<li>VV Puram Food Street: 2.5 km, famous for street food.</li>
+<li>Shree Sagar: 3 km, traditional dosa and vada.</li>
+            </ul>
+        </div>
+    </div>
+    <div class="map-button" id="map">
+            <a href="https://www.google.com/maps/search/26.+Bangalore+Fort/@12.9807285,77.4876443,11z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D" target="_blank">View Map on Google Maps</a>
+        </div>
+        
+        <div class="container">
+            <div class="image-space" id="image">
+                <img src="loc.jpeg" alt="Tourist Location" style="max-width: 100%; height: auto;">
+            </div>
+
+        <div class="info-box" id="info">
+            <h2>About This Location</h2>
+            <p id="abt">	Bangalore Fort: The Bangalore Fort was originally built by Kempegowda in the 16th century as a mud fort and later expanded by the British. The fort, located near the heart of the city, has witnessed several historical events and still retains some of its old-world charm with large gates and ramparts. The fort's design is influenced by both Indian and European styles, making it a fascinating historical site for visitors interested in Bangalore’s colonial past.</p>
+        </div>
+    
+        
+    
+        <div class="eateries" id="eateries">
+            <h2>Nearby Eateries</h2>
+            <ul>
+                <li>The 13th Floor: 1 km, rooftop dining with panoramic views.</li>
+<li>Koshys Restaurant: 1.5 km, iconic Bangalorean eatery.</li>
+<li>RRR Restaurant: 2 km, famous for Andhra-style meals.</li>
+            </ul>
+        </div>
+    </div>
+    <div class="map-button" id="map">
+            <a href="https://www.google.com/maps/search/27.+Sankey+Tank/@13.0020055,77.5687852,15z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D" target="_blank">View Map on Google Maps</a>
+        </div>
+
+        <div class="container">
+            <div class="image-space" id="image">
+                <img src="loc.jpeg" alt="Tourist Location" style="max-width: 100%; height: auto;">
+            </div>
+
+        <div class="info-box" id="info">
+            <h2>About This Location</h2>
+            <p id="abt">Sankey Tank: Sankey Tank is a serene, man-made lake located in the western part of Bangalore. It is surrounded by lush greenery and features a walking path that attracts fitness enthusiasts, nature lovers, and families. The lake is perfect for a quiet escape from the city hustle and bustle. It is also a popular spot for birdwatching and evening walks, offering a peaceful atmosphere for residents and visitors.</p>
+        </div>
+    
+        
+    
+        <div class="eateries" id="eateries">
+            <h2>Nearby Eateries</h2>
+            <ul>
+                <li>The Terrace: 1 km, cozy rooftop cafe.</li>
+<li>Black Rabbit: 2 km, gastro-pub with a lively atmosphere.</li>
+<li>Koshys: 2.5 km, classic Bangalorean comfort food.</li>
+            </ul>
+        </div>
+    </div>
+    <div class="map-button" id="map">
+            <a href="https://www.google.com/maps/place/Malleshwaram,+Bengaluru,+Karnataka/@13.0076964,77.5467178,14z/data=!3m1!4b1!4m6!3m5!1s0x3bae3d7fff79cfc3:0xdfbaac7a46a4a5be!8m2!3d13.0055113!4d77.5692358!16zL20vMGZxdG10?entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D" target="_blank">View Map on Google Maps</a>
+        </div>
+
+        <div class="container">
+            <div class="image-space" id="image">
+                <img src="loc.jpeg" alt="Tourist Location" style="max-width: 100%; height: auto;">
+            </div>
+
+        <div class="info-box" id="info">
+            <h2>About This Location</h2>
+            <p id="abt">Whitefield Art Collective: Whitefield Art Collective is a unique cultural initiative in the Whitefield neighborhood aimed at promoting contemporary art and performances. Held annually at VR Bengaluru, the event features installations, theater performances, and music concerts. The collective brings together local and international artists to celebrate creativity in all its forms. Its an important event for art lovers, offering a platform for artistic expression in one of Bangalore's tech hubs.</p>
+        </div>
+    
+        
+    
+        <div class="eateries" id="eateries">
+            <h2>Nearby Eateries</h2>
+            <ul>
+                <li>CTR (Central Tiffin Room): 1 km, famous for butter masala dosa.</li>
+<li>Hotel Janatha: 2 km, classic South Indian meals.</li>
+<li>Mavalli Tiffin Room (MTR): 2.5 km, iconic dosa joint.</li>
+        </div>
+    </div>
+   
+    
+
+<script>
+    const modeToggle = document.getElementById('modeToggle');
+
+    modeToggle.addEventListener('click', () => {
+        const isDarkMode = document.body.style.backgroundColor === 'rgb(48, 48, 48)';
+
+        // Switch between dark and light mode
+        document.body.style.backgroundColor = isDarkMode ? 'white' : 'rgb(48, 48, 48)';
+        document.body.style.color = isDarkMode ? 'black' : 'white';
+        modeToggle.textContent = isDarkMode ? '🌙' : '☀️';
+
+        // Update divs and buttons
+        document.querySelectorAll('.info-box, .eateries').forEach(div => {
+            div.style.backgroundColor = isDarkMode ? 'rgb(240, 240, 240)' : 'rgb(64, 64, 64)';
+            div.style.color = isDarkMode ? 'black' : 'white';
+        });
+
+        document.querySelectorAll('.map-button a').forEach(button => {
+            button.style.backgroundColor = isDarkMode ? 'rgb(240, 240, 240)' : 'rgb(32, 32, 39)';
+            button.style.color = isDarkMode ? 'black' : 'white';
+        });
+    });
+</script>
+
+</body>
+</html>

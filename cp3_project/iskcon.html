@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tourist Location</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: rgb(48, 48, 48); /* Dark gray background */
+            color: white;
+            transition: background-color 0.5s, color 0.5s;
+        }
+        img{
+            width: 500px;
+        }
+        header {
+            background-color: rgb(32, 32, 39);
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        header a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2em;
+        }
+        nav {
+            background-color: rgb(32, 32, 39);
+            overflow: hidden;
+        }
+        nav a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        .container {
+            padding: 20px;
+        }
+        .image-space {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .info-box {
+            background-color: rgb(64, 64, 64); /* Subtle full-width gray */
+            width: 100%;
+            padding: 20px;
+            margin-bottom: 20px;
+            color: white;
+            box-sizing: border-box;
+            transition: background-color 0.5s;
+        }
+        .eateries {
+            background-color: rgb(64, 64, 64); /* Subtle full-width gray */
+            width: 100%;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+            transition: background-color 0.5s;
+        }
+        .map-button {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        .map-button a {
+            background-color: rgb(32, 32, 39);
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: 1.2em;
+            border-radius: 5px;
+            transition: background-color 0.5s, color 0.5s;
+        }
+        .map-button a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        .mode-toggle {
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 1.2em;
+        }
+        #logo{
+            font-weight: bolder;
+            font-size: 25px;
+        }
+        #abt{
+            font-size: 18px;
+            font-weight:lighter;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <a href="mainpage.html.html" target="_blank" id="logo">Bengaluru</a>
+    <nav>
+        <a href="#info">Info</a>
+        <a href="#eateries">Nearby Eateries</a>
+        <a href="#map">Map</a>
+    </nav>
+    <div class="mode-toggle" id="modeToggle">🌙</div>
+</header>
+
+<div class="container">
+    <div class="image-space" id="image">
+        <img src="Iskcon-bengalore.jpg" alt="Tourist Location" style="max-width: 100%; height: auto;">
+    </div>
+
+    <div class="info-box" id="info">
+        <h2>About This Location</h2>
+        <p id="abt">ISKCON Temple: The ISKCON Temple in Bangalore, dedicated to Lord Krishna, was completed in 1997 and is one of the largest temples of its kind. It features a striking blend of modern and traditional architecture and is surrounded by lush gardens. The temple's serene environment and spiritual programs attract thousands of devotees and tourists. The temple complex also includes a food court offering sattvic meals, making it a spiritual and culinary destination.</p>
+    </div>
+
+    
+
+    <div class="eateries" id="eateries">
+        <h2>Nearby Eateries</h2>
+        <ul>
+            <li><strong>Sattvam:</strong> 1 km, vegetarian dining.</li>
+            <li><strong>Makaranda Restaurant:</strong> 1.5 km, quick vegetarian.</li>
+            <li><strong>North Wind:</strong> 2 km, multi-cuisine dishes.</li>
+        </ul>
+    </div>
+</div>
+<div class="map-button" id="map">
+        <a href="https://www.google.com/maps/place/ISKCON+temple+Bangalore/@13.0096695,77.5485595,17z/data=!3m1!4b1!4m6!3m5!1s0x3bae3ded0b360e07:0x7a7fb24a41a6b2b3!8m2!3d13.0096643!4d77.5511344!16s%2Fm%2F0g9x5qd?entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D" target="_blank">View Map on Google Maps</a>
+    </div>
+
+<script>
+    const modeToggle = document.getElementById('modeToggle');
+
+    modeToggle.addEventListener('click', () => {
+        const isDarkMode = document.body.style.backgroundColor === 'rgb(48, 48, 48)';
+
+        // Switch between dark and light mode
+        document.body.style.backgroundColor = isDarkMode ? 'white' : 'rgb(48, 48, 48)';
+        document.body.style.color = isDarkMode ? 'black' : 'white';
+        modeToggle.textContent = isDarkMode ? '🌙' : '☀️';
+
+        // Update divs and buttons
+        document.querySelectorAll('.info-box, .eateries').forEach(div => {
+            div.style.backgroundColor = isDarkMode ? 'rgb(240, 240, 240)' : 'rgb(64, 64, 64)';
+            div.style.color = isDarkMode ? 'black' : 'white';
+        });
+
+        document.querySelectorAll('.map-button a').forEach(button => {
+            button.style.backgroundColor = isDarkMode ? 'rgb(240, 240, 240)' : 'rgb(32, 32, 39)';
+            button.style.color = isDarkMode ? 'black' : 'white';
+        });
+    });
+</script>
+
+</body>
+</html>

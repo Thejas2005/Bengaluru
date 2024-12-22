@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bengaluru Dining Scene</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+        }
+        .navbar-logo {
+            font-size: 1.5em;
+            cursor: pointer;
+        }
+        .toggle-mode {
+            background: none;
+            border: none;
+            font-size: 1.5em;
+            color: white;
+            cursor: pointer;
+        }
+        .main {
+            padding: 20px;
+            text-align: center;
+        }
+        .eatery {
+            background-color: white;
+            margin: 15px auto;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 600px;
+        }
+        .eatery h3 {
+            margin: 0 0 10px 0;
+        }
+        .eatery p {
+            margin: 5px 0;
+        }
+        .btn-map {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .btn-map:hover {
+            background-color: #0056b3;
+        }
+        .dark-mode {
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+        .dark-mode .navbar {
+            background-color: #1e1e1e;
+        }
+        .dark-mode .eatery {
+            background-color: #1e1e1e;
+            box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="navbar-logo" onclick="goToHomePage()">Bengaluru</div>
+        <button class="toggle-mode" onclick="toggleMode()" id="toggle-icon">🌙</button>
+    </div>
+
+    <div class="main">
+        <h1>Famous Bengaluru Eateries</h1>
+
+        <div id="eatery-list">
+            <!-- Eateries will be dynamically added here by JavaScript -->
+        </div>
+    </div>
+
+    <script>
+        // List of famous eateries with names, descriptions, and Google Maps links
+        const eateries = [
+            { 
+                name: "MTR (Mavalli Tiffin Room)", 
+                description: "Known for its traditional South Indian meals served on banana leaves.",
+                location: "https://goo.gl/maps/8Z7HJWYYpQQ2" 
+            },
+            { 
+                name: "CTR (Central Tiffin Room)", 
+                description: "A favorite spot for crispy masala dosas and filter coffee.",
+                location: "https://goo.gl/maps/WUbh1c9egwr" 
+            },
+            { 
+                name: "Vidyarthi Bhavan", 
+                description: "Famous for its iconic dosas and a nostalgic ambiance.",
+                location: "https://goo.gl/maps/Duc1gxy8z1r" 
+            },
+            { 
+                name: "Truffles", 
+                description: "Popular for burgers, steaks, and a lively vibe.",
+                location: "https://goo.gl/maps/ycdz7xyJZd12" 
+            },
+            { 
+                name: "Toit", 
+                description: "A microbrewery with great craft beers and wood-fired pizzas.",
+                location: "https://goo.gl/maps/XqVRJ9xx8L42" 
+            },
+            { 
+                name: "The Only Place", 
+                description: "Known for its American-style steaks and desserts.",
+                location: "https://goo.gl/maps/qeCJxHzrV3k" 
+            },
+            { 
+                name: "Indian Coffee House", 
+                description: "Historic eatery serving affordable South Indian snacks and coffee.",
+                location: "https://goo.gl/maps/G7JHzZ9Qxws" 
+            },
+            { 
+                name: "Corner House", 
+                description: "Famous for its ice creams, especially the 'Death by Chocolate'.",
+                location: "https://goo.gl/maps/tLzTcZ3f2Cs" 
+            },
+            { 
+                name: "Airlines Hotel", 
+                description: "Outdoor dining with a retro feel, offering South Indian classics.",
+                location: "https://goo.gl/maps/Z9qyycX6YbQ2" 
+            },
+            { 
+                name: "Empire Restaurant", 
+                description: "Late-night favorite for biryanis, kebabs, and Indian curries.",
+                location: "https://goo.gl/maps/hdVrbz99CLk" 
+            }
+        ];
+
+        // Function to load eateries dynamically
+        function loadEateries() {
+            const eateryList = document.getElementById("eatery-list");
+
+            eateries.forEach((eatery) => {
+                const eateryDiv = document.createElement("div");
+                eateryDiv.className = "eatery";
+
+                eateryDiv.innerHTML = `
+                    <h3>${eatery.name}</h3>
+                    <p>${eatery.description}</p>
+                    <button class="btn-map" onclick="openMap('${eatery.location}')">View on Map</button>
+                `;
+
+                eateryList.appendChild(eateryDiv);
+            });
+        }
+
+        // Function to go to the home page
+        function goToHomePage() {
+            location.href = "mainpage.html.html"; // Adjust to your main page file if different
+        }
+
+        // Function to open Google Maps link
+        function openMap(url) {
+            window.open(url, "_blank");
+        }
+
+        // Function to toggle dark/light mode
+        function toggleMode() {
+            document.body.classList.toggle("dark-mode");
+            const toggleIcon = document.getElementById("toggle-icon");
+            toggleIcon.textContent = document.body.classList.contains("dark-mode") ? "☀️" : "🌙";
+        }
+
+        // Load eateries on page load
+        loadEateries();
+    </script>
+</body>
+</html>

@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <style>
+        :root {
+            --bg-color: #1a1a1a;
+            --text-color: #fff;
+            --card-bg-color: #1e1e1e;
+            --card-text-color: white;
+            --btn-bg-color: rgb(32, 32, 39);
+            --btn-hover-color: rgb(40, 54, 80);
+            --font-color:rgb(212, 212, 212);
+        }
+
+        [data-theme="light"] {
+            --bg-color: #ffffff;
+            --text-color: #000;
+            --card-bg-color: #f0f0f0;
+            --card-text-color: black;
+            --btn-bg-color: #e0e0e0;
+            --btn-hover-color: #aaaaaa;
+            --desc-color: rgb(255, 255, 255);
+            --font-color:rgb(65, 65, 65);
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: var(--bg-color);
+            color: var(--text-color);
+        }
+
+        .container {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background-color: var(--card-bg-color);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            text-decoration: none;
+            color: var(--card-text-color);
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 15px;
+        }
+
+        .card-title {
+            font-size: 1.2em;
+            margin: 0 0 10px;
+        }
+
+        .card-description {
+            font-size: 0.9em;
+            color: var(--font-color);
+        }
+
+        .nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background-color: var(--btn-bg-color);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            z-index: 3;
+            transition: background-color 0.3s ease;
+        }
+
+        .nav .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .nav button {
+            background-color: var(--btn-bg-color);
+            color: var(--text-color);
+            border: none;
+            padding: 0.5rem 1rem;
+            margin: 0 0.5rem;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background 0.3s;
+        }
+
+        .nav button:hover {
+            background-color: var(--btn-hover-color);
+        }
+
+        .nav button a {
+            color: var(--text-color);
+            text-decoration: none;
+        }
+
+        .search-bar {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-left: auto;
+        }
+
+        .search-bar input[type="text"] {
+            padding: 0.8rem;
+            font-size: 1rem;
+            border: none;
+            border-radius: 5px;
+            outline: none;
+            width: 250px;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+        }
+
+        .search-bar input::placeholder {
+            color: var(--font-color);
+        }
+
+        .search-bar button {
+            padding: 0.8rem 1.5rem;
+            font-size: 1rem;
+            background-color: var(--btn-bg-color);
+            color: var(--text-color);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .search-bar button:hover {
+            background-color: var(--btn-hover-color);
+        }
+
+        .toggle-container {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-right: 50px;
+        }
+
+        .img {
+            position: relative;
+            background-image: url('vs.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 800px;
+            width: 100%;
+            margin-top: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            color: var(--desc-color);
+            padding: 2rem;
+        }
+
+        .description {
+            padding: 3rem 2rem;
+            background: var(--card-bg-color);
+            text-align: center;
+        }
+
+        .description h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+        }
+
+        .description p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            color: var(--font-color);
+        }
+
+        @media (max-width: 768px) {
+            .nav {
+                flex-wrap: wrap;
+                justify-content: center;
+                text-align: center;
+            }
+
+            .nav .logo {
+                margin-bottom: 1rem;
+            }
+
+            .search-bar input[type="text"] {
+                width: 200px;
+            }
+
+            .content h1 {
+                font-size: 2.5rem;
+            }
+
+            .content p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <div class="logo">Bengaluru</div>
+        <div>
+            <button><a href="https://www.google.com/maps/place/Bengaluru,+Karnataka/@12.9539454,77.4657866,11z/data=!3m1!4b1!4m6!3m5!1s0x3bae1670c9b44e6d:0xf8dfc3e8517e4fe0!8m2!3d12.9715987!4d77.5945627!16zL20vMDljMTc?entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D">Map</a></button>
+            <button><a href="attractions.html">Popular Attractions</a></button>
+            <button><a href="dining.html">Dining</a></button>
+        </div>
+      
+        <div class="toggle-container">
+            <span id="theme-icon" class="theme-icon">🌙</span>
+        </div>
+    </div>
+
+    <div class="img">
+        <div class="overlay"></div>
+        <div class="content">
+            <h1>Explore Bengaluru</h1>
+            <p>One City, Many Experiences</p> 
+            <div class="search-bar">
+                <input type="text" id="location" placeholder="Enter location">
+                <button onclick="searchLocation()">Search</button>
+                <button onclick="openCurrentLocation()">My Current Location</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="description">
+        <h2>Discover Bengaluru</h2>
+        <p>
+            Explore stunning locations and create lasting memories in the vibrant city of Bengaluru. 
+            From bustling markets and historic landmarks to serene gardens and vibrant nightlife, 
+            uncover the endless adventures that this magnificent city has to offer.
+        </p>
+    </div>
+    
+    <div class="container">
+        <h1>Featured Destinations</h1>
+        <div class="grid">
+            <!-- Destination Card 1 -->
+            <a href="#" class="card" onclick="navigateTo('Cubbonpark.html')">
+                <div class="card-wrapper">
+                    <img src="Cubbon-Park.jpeg" alt="Cubbon Park">
+                </div>
+                <div class="card-content">
+                    <h2 class="card-title">Cubbon Park</h2>
+                    <p class="card-description">A large green space in the middle of Bangalore city.</p>
+                </div>
+            </a>
+
+            <!-- Destination Card 2 -->
+            <a href="#" class="card" onclick="navigateTo('Bangalorepalace.html')">
+                <div class="card-wrapper">
+                    <img src="bangalorepalace.jpeg" alt="Bangalore Palace">
+                </div>
+                <div class="card-content">
+                    <h2 class="card-title">Bangalore Palace</h2>
+                    <p class="card-description">A royal palace in the heart of Bangalore.</p>
+                </div>
+            </a>
+
+            <!-- Destination Card 3 -->
+            <a href="#" class="card" onclick="navigateTo('vidhana-soudha.html')">
+                <div class="card-wrapper">
+                    <img src="vidhana-soudha.jpg" alt="Vidhana Soudha">
+                </div>
+                <div class="card-content">
+                    <h2 class="card-title">Vidhana Soudha</h2>
+                    <p class="card-description">The seat of the state legislature of Karnataka.</p>
+                </div>
+            </a>
+
+            <!-- Destination Card 4 -->
+            <a href="#" class="card" onclick="navigateTo('Bannerghatta.html')">
+                <div class="card-wrapper">
+                    <img src="Bannerghatta-National-Park-Tiger-1280x720.jpg" alt="Bannerghatta Biological Park">
+                </div>
+                <div class="card-content">
+                    <h2 class="card-title">Bannerghatta Biological Park</h2>
+                    <p class="card-description">A biological park located just outside Bangalore.</p>
+                </div>
+            </a>
+
+            <!-- Destination Card 5 -->
+            <a href="#" class="card" onclick="navigateTo('lalbhagh.html')">
+                <div class="card-wrapper">
+                    <img src="lalbhagh.jpg" alt="Lalbagh Botanical Garden">
+                </div>
+                <div class="card-content">
+                    <h2 class="card-title">Lalbagh Botanical Garden</h2>
+                    <p class="card-description">A famous botanical garden in Bangalore.</p>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        function toggleTheme() {
+            const htmlElement = document.documentElement;
+            const themeIcon = document.getElementById('theme-icon');
+            const isLightTheme = htmlElement.getAttribute('data-theme') === 'light';
+            
+            if (isLightTheme) {
+                htmlElement.setAttribute('data-theme', 'dark');
+                themeIcon.textContent = '🌙'; // Moon icon
+            } else {
+                htmlElement.setAttribute('data-theme', 'light');
+                themeIcon.textContent = '🌞'; // Sun icon
+            }
+        }
+
+        document.getElementById('theme-icon').addEventListener('click', toggleTheme);
+
+        function searchLocation() {
+            const location = document.getElementById("location").value;
+            if (location.trim() === "") {
+                alert("Please enter a location.");
+            } else {
+                const mapsUrl = `https://www.google.com/maps?q=${encodeURIComponent(location)}`;
+                window.open(mapsUrl, "_blank");
+            }
+        }
+
+        function openCurrentLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition((position) => {
+                    const { latitude, longitude } = position.coords;
+                    const mapsUrl = `https://www.google.com/maps?q=${latitude},${longitude}`;
+                    window.open(mapsUrl, "_blank");
+                }, () => {
+                    alert("Unable to retrieve your location. Please check your browser settings.");
+                });
+            } else {
+                alert("Geolocation is not supported by your browser.");
+            }
+        }
+
+        function navigateTo(page) {
+            window.location.href = page;
+        }
+    </script>
+</body>
+</html>

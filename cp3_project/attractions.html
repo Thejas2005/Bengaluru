@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tourist Spots</title>
+    <style>
+        :root {
+            --dark-bg: rgb(33, 33, 39);
+            --light-bg: #f2f2f2;
+            --dark-text: #ffffff;
+            --light-text: #000000;
+            --card-light-bg: #ffffff;
+            --card-dark-bg: #444;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: var(--light-bg);
+            color: var(--light-text);
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            background-color: var(--dark-bg);
+            color: var(--dark-text);
+        }
+
+        .navbar button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--dark-text);
+            font-size: 1rem;
+        }
+
+        .navbar .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .card {
+            display: block;
+            margin: 1rem;
+            text-decoration: none;
+            color: inherit;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            max-width: 300px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s, background-color 0.3s;
+            background-color: var(--card-light-bg);
+        }
+
+        .card:nth-child(odd) {
+            background-color: #f9f9f9;
+        }
+
+        .card:nth-child(even) {
+            background-color: #eeeeee;
+        }
+
+        .dark-mode .card {
+            background-color: var(--card-dark-bg);
+            color: var(--dark-text);
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card-wrapper img {
+            width: 100%;
+            height: auto;
+        }
+
+        .card-content {
+            padding: 1rem;
+        }
+
+        .cards-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 1rem;
+        }
+
+        .dark-mode {
+            background-color: var(--dark-bg);
+            color: var(--dark-text);
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo" onclick="navigateTo('mainpage.html.html')">Bengaluru</div>
+        <button id="theme-toggle" onclick="toggleTheme()">🌞</button>
+    </div>
+
+    <div class="cards-container">
+        <a href="#" class="card" onclick="navigateTo('vidhansaudha.html')">
+            <div class="card-wrapper">
+                <img src="vidhana-soudha.jpg" alt="Vidhana Soudha">
+            </div>
+            <div class="card-content">
+                <h2 class="card-title">Vidhana Soudha</h2>
+                <p class="card-description">The seat of the state legislature of Karnataka.</p>
+            </div>
+        </a>
+        <a href="#" class="card" onclick="navigateTo('Bangalorepalace.html')">
+            <div class="card-wrapper">
+                <img src="bangalorepalace.jpeg" alt="">
+            </div>
+            <div class="card-content">
+                <h2 class="card-title">Bangalore Palace</h2>
+                <p class="card-description">A Royal Palace in the heart of the city.</p>
+            </div>
+        </a>
+        <a href="#" class="card" onclick="navigateTo('BigBanyanTree.html')">
+            <div class="card-wrapper">
+                <img src="bbtree.jpg" alt="">
+            </div>
+            <div class="card-content">
+                <h2 class="card-title">Dodda Aalada Marra</h2>
+                <p class="card-description"></p>
+            </div>
+        </a>
+        <a href="#" class="card" onclick="navigateTo('iskcon.html')">
+            <div class="card-wrapper">
+                <img src="Iskcon-bengalore.jpg" alt="">
+            </div>
+            <div class="card-content">
+                <h2 class="card-title">Iskcon-Bengaluru</h2>
+                <p class="card-description">A magnificent Temple dedicated to Shri Krishna</p>
+            </div>
+        </a>
+        <a href="#" class="card" onclick="navigateTo('Cubbonpark.html')">
+            <div class="card-wrapper">
+                <img src="Cubbon-Park.jpeg" alt="">
+            </div>
+            <div class="card-content">
+                <h2 class="card-title">Cubbon Park</h2>
+                <p class="card-description"></p>
+            </div>
+        </a>
+        <a href="#" class="card" onclick="navigateTo('gavi.html')">
+            <div class="card-wrapper">
+                <img src="gavi.jpeg" alt="Amber Fort">
+            </div>
+            <div class="card-content">
+                <h2 class="card-title">Gavi Gangadhareshwara Temple</h2>
+                <p class="card-description"></p>
+            </div>
+        </a>
+        <a href="#" class="card" onclick="navigateTo('hebballake.html')">
+            <div class="card-wrapper">
+                <img src="hebbalbox.jpg" alt="">
+            </div>
+            <div class="card-content">
+                <h2 class="card-title">Hebbal Lake</h2>
+                <p class="card-description"></p>
+            </div>
+        </a>
+        <a href="#" class="card" onclick="navigateTo('koshysrest.html')">
+            <div class="card-wrapper">
+                <img src="Koshys.jpg" alt="">
+            </div>
+            <div class="card-content">
+                <h2 class="card-title">Koshy's Restaurant</h2>
+                <p class="card-description">A Legendary restaurant in the heart of the city</p>
+            </div>
+        </a>
+        <a href="#" class="card" onclick="navigateTo('orionmall.html')">
+            <div class="card-wrapper">
+                <img src="orion.jpeg" alt="">
+            </div>
+            <div class="card-content">
+                <h2 class="card-title">Orion Mall</h2>
+                <p class="card-description"></p>
+            </div>
+        </a>
+        <a href="#" class="card" onclick="navigateTo('Rajarajeshwari.html')">
+            <div class="card-wrapper">
+                <img src="rrtemple.jpeg" alt="">
+            </div>
+            <div class="card-content">
+                <h2 class="card-title">Rajarajeshwari-Temple</h2>
+                <p class="card-description"></p>
+            </div>
+        </a>
+
+
+    <script>
+        function navigateTo(url) {
+            window.location.href = url;
+        }
+
+        function toggleTheme() {
+            const body = document.body;
+            const themeToggle = document.getElementById('theme-toggle');
+
+            if (body.classList.contains('dark-mode')) {
+                body.classList.remove('dark-mode');
+                body.style.backgroundColor = getComputedStyle(document.documentElement).getPropertyValue('--light-bg');
+                body.style.color = getComputedStyle(document.documentElement).getPropertyValue('--light-text');
+                themeToggle.textContent = '🌞';
+            } else {
+                body.classList.add('dark-mode');
+                body.style.backgroundColor = getComputedStyle(document.documentElement).getPropertyValue('--dark-bg');
+                body.style.color = getComputedStyle(document.documentElement).getPropertyValue('--dark-text');
+                themeToggle.textContent = '🌜';
+            }
+        }
+    </script>
+</body>
+</html>
